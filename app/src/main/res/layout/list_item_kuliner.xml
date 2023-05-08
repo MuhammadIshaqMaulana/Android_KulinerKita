@@ -28,7 +28,7 @@
             android:textStyle="bold"
             />
         <TextView
-            android:id="@+id/tv_alamat"
+            android:id="@+id/tv_asal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Asal Kuliner"
@@ -36,12 +36,13 @@
             android:maxLines="2"
             />
         <TextView
-            android:id="@+id/tv_telepon"
+            android:id="@+id/tv_deskripsi_singkat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Deskripsi Singkat"
             android:textSize="17sp"
-            android:maxLines="1"
+            android:ellipsize="end"
+            android:maxLines="2"
             />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
