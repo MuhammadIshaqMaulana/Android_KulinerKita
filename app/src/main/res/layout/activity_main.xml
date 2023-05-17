@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="6dp"
-    tools:context=".Activity.MainActivity">
+    tools:context="com.ishaq.kulinerkita.Activity.MainActivity">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_kuliner"
         android:layout_width="match_parent"
