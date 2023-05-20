@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.kulinerkita.R;
+import com.ishaq.kulinerkita.R;
 
 public class UbahActivity extends AppCompatActivity {
 

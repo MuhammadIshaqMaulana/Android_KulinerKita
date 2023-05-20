@@ -9,7 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.kulinerkita.R;
+import com.ishaq.kulinerkita.R;
 import com.ishaq.kulinerkita.API.APIRequestData;
 import com.ishaq.kulinerkita.API.RetroServer;
 import com.ishaq.kulinerkita.Model.ModelResponse;
