@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.kulinerkita'
+    namespace 'com.ishaq.kulinerkita'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.kulinerkita"
+        applicationId "com.ishaq.kulinerkita"
         minSdk 24
         targetSdk 33
         versionCode 1
