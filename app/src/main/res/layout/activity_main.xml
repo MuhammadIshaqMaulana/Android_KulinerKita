@@ -6,16 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="6dp"
-    tools:context="com.ishaq.kulinerkita.Activity.MainActivity">
+    tools:context="com.ishaq.AsusIshaq2125250060.Activity.MainActivity">
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_kuliner"
+        android:id="@+id/rv_asus"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/list_item_kuliner"
+        tools:listitem="@layout/list_item_asus"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_tambah_data"
+        android:id="@+id/fab_tambah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -26,7 +26,7 @@
         android:layout_marginBottom="32dp"
         android:src="@drawable/ic_tambah"/>
     <ProgressBar
-        android:id="@+id/pb_kuliner"
+        android:id="@+id/pb_asus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

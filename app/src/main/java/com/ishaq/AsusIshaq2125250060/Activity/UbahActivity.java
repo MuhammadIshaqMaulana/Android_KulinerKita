@@ -1,4 +1,4 @@
-package com.ishaq.kulinerkita.Activity;
+package com.ishaq.AsusIshaq2125250060.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,19 +9,20 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ishaq.kulinerkita.API.APIRequestData;
-import com.ishaq.kulinerkita.API.RetroServer;
-import com.ishaq.kulinerkita.Model.ModelResponse;
-import com.ishaq.kulinerkita.R;
+import com.ishaq.AsusIshaq2125250060.API.APIRequestData;
+import com.ishaq.AsusIshaq2125250060.API.RetroServer;
+import com.ishaq.AsusIshaq2125250060.Model.ModelResponse;
+import com.ishaq.asusishaq2125250060.R;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 public class UbahActivity extends AppCompatActivity {
-    private String yId, yNama, yAsal, yDeskripsiSingkat;
-    private String nama, asal, deskripsiSingkat;
-    private EditText etNama, etAsal, etDeskripsiSingkat;
+    private String zId, zNama, zHarga, zLink, zSpek;
+    private String nama, harga, link, spek;
+    private EditText etNama, etHarga, etLink, etSpek;
     private Button btnUbah;
     @Override
     protected void onCreate (Bundle savedInstanceState){
@@ -29,51 +30,58 @@ public class UbahActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ubah);
 
         Intent ambil = getIntent();
-        yId = ambil.getStringExtra("xId");
-        yNama = ambil.getStringExtra("xNama");
-        yAsal = ambil.getStringExtra("xAsal");
-        yDeskripsiSingkat = ambil.getStringExtra("xDeskripsiSingkat");
+        zId = ambil.getStringExtra("yId");
+        zNama = ambil.getStringExtra("yNama");
+        zHarga = ambil.getStringExtra("yHarga");
+        zLink = ambil.getStringExtra("yLink");
+        zSpek = ambil.getStringExtra("ySpek");
 
         etNama = findViewById(R.id.et_nama);
-        etAsal = findViewById(R.id.et_asal);
-        etDeskripsiSingkat = findViewById(R.id.et_deskripsi_singkat);
+        etHarga = findViewById(R.id.et_harga);
+        etLink = findViewById(R.id.et_link);
+        etSpek = findViewById(R.id.et_spek);
         btnUbah = findViewById(R.id.btn_ubah);
 
-        etNama.setText(yNama);
-        etAsal.setText(yAsal);
-        etDeskripsiSingkat.setText(yDeskripsiSingkat);
+        etNama.setText(zNama);
+        etHarga.setText(zHarga);
+        etLink.setText(zLink);
+        etSpek.setText(zSpek);
 
         btnUbah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 nama = etNama.getText().toString();
-                asal = etAsal.getText().toString();
-                deskripsiSingkat = etDeskripsiSingkat.getText().toString();
+                harga = etHarga.getText().toString();
+                link = etLink.getText().toString();
+                spek = etSpek.getText().toString();
 
-                if(nama.trim().isEmpty()||asal.trim().isEmpty()||deskripsiSingkat.trim().isEmpty()){
+                if(nama.trim().isEmpty()|| harga.trim().isEmpty()|| link.trim().isEmpty()|| spek.trim().isEmpty()){
                     if(nama.trim().isEmpty()){
                         etNama.setError("nama tidak boleh kosong");
                     }
-                    if(asal.trim().isEmpty()){
-                        etAsal.setError("asal tidak boleh kosong");
+                    if(harga.trim().isEmpty()){
+                        etHarga.setError("harga tidak boleh kosong");
                     }
-                    if(deskripsiSingkat.trim().isEmpty()){
-                        etDeskripsiSingkat.setError("Deskripsi Singkat tidak boleh kosong");
+                    if(link.trim().isEmpty()){
+                        etLink.setError("link foto laptop tidak boleh kosong");
+                    }
+                    if(spek.trim().isEmpty()){
+                        etSpek.setError("spesifikasi tidak boleh kosong");
                     }
 
                 }
 
                 else {
-                    ubahKuliner();
+                    ubahAsus();
                 }
             }
         });
 
     }
 
-    public void ubahKuliner(){
+    public void ubahAsus(){
         APIRequestData ARD = RetroServer.KonekRetrofit().create(APIRequestData.class);
-        Call<ModelResponse> proses = ARD.ardUpdate(yId, nama, asal, deskripsiSingkat);
+        Call<ModelResponse> proses = ARD.ardUpdate(zId, nama, harga, link, spek);
 
         proses.enqueue(new Callback<ModelResponse>() {
             @Override

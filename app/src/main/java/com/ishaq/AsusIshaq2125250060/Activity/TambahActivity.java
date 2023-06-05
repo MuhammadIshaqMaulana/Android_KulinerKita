@@ -1,6 +1,5 @@
-package com.ishaq.kulinerkita.Activity;
+package com.ishaq.AsusIshaq2125250060.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,61 +7,66 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.ishaq.kulinerkita.R;
-import com.ishaq.kulinerkita.API.APIRequestData;
-import com.ishaq.kulinerkita.API.RetroServer;
-import com.ishaq.kulinerkita.Model.ModelResponse;
+
+import com.ishaq.AsusIshaq2125250060.API.APIRequestData;
+import com.ishaq.AsusIshaq2125250060.API.RetroServer;
+import com.ishaq.AsusIshaq2125250060.Model.ModelResponse;
+import com.ishaq.asusishaq2125250060.R;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TambahActivity extends AppCompatActivity {
-    private EditText etNama, etAsal, etDeskripsiSingkat;
+    private EditText etNama, etHarga, etLink, etSpek;
     private Button btnSimpan;
-    private String nama, asal, deskripsiSingkat;
+    private String nama, harga, link, spek;
 
     @Override
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah);
         etNama = findViewById(R.id.et_nama);
-        etAsal = findViewById(R.id.et_asal);
-        etDeskripsiSingkat = findViewById(R.id.et_deskripsi_singkat);
+        etHarga = findViewById(R.id.et_link);
+        etLink = findViewById(R.id.et_harga);
+        etSpek = findViewById(R.id.et_spek);
         btnSimpan = findViewById(R.id.btn_simpan);
 
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 nama = etNama.getText().toString();
-                asal = etAsal.getText().toString();
-                deskripsiSingkat = etDeskripsiSingkat.getText().toString();
+                harga = etHarga.getText().toString();
+                link = etLink.getText().toString();
+                spek = etSpek.getText().toString();
 
-                if(nama.trim().isEmpty()||asal.trim().isEmpty()||deskripsiSingkat.trim().isEmpty()){
+                if(nama.trim().isEmpty()|| harga.trim().isEmpty()|| link.trim().isEmpty()|| spek.trim().isEmpty()){
                     if(nama.trim().isEmpty()){
                         etNama.setError("nama tidak boleh kosong");
                     }
-                    if(asal.trim().isEmpty()){
-                        etAsal.setError("asal tidak boleh kosong");
+                    if(harga.trim().isEmpty()){
+                        etHarga.setError("harga tidak boleh kosong");
                     }
-                    if(deskripsiSingkat.trim().isEmpty()){
-                        etDeskripsiSingkat.setError("Deskripsi Singkat tidak boleh kosong");
+                    if(link.trim().isEmpty()){
+                        etLink.setError("link foto laptop tidak boleh kosong");
+                    }
+                    if(spek.trim().isEmpty()){
+                        etSpek.setError("spesifikasi tidak boleh kosong");
                     }
 
                 }
 
                 else {
-                    tambahKuliner();
+                    tambahAsus();
                 }
             }
         });
     }
 
-    public void tambahKuliner(){
+    public void tambahAsus(){
         APIRequestData ARD = RetroServer.KonekRetrofit().create(APIRequestData.class);
-        Call<ModelResponse> proses = ARD.ardCreate(nama, asal, deskripsiSingkat);
+        Call<ModelResponse> proses = ARD.ardCreate(nama, harga, link, spek);
 
         proses.enqueue(new Callback<ModelResponse>() {
             @Override
@@ -71,8 +75,6 @@ public class TambahActivity extends AppCompatActivity {
                 String pesan = response.body().getPesan();
 
                 Toast.makeText(TambahActivity.this, "Kode: " + kode + "Pesan: " + pesan, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(TambahActivity.this, MainActivity.class);
-                finish();
             }
 
             @Override
