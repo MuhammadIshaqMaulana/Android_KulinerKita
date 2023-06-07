@@ -1,82 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:backgroundTint="@color/black"
     android:layout_height="230dp"
     android:layout_margin="6dp">
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
-
+        android:orientation="vertical">
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center"
-            android:layout_margin="6dp"
-            >
-            <TextView
-                android:id="@+id/tv_id"
-                android:layout_width="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="ID Laptop"
-                android:textSize="21sp"
-                android:textStyle="bold"
-                android:visibility="gone"
-                />
-            <TextView
-                android:id="@+id/tv_nama"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="Asus TUF 121243243544354546tiuyugyg5432432432"
-                android:textSize="21sp"
-                android:textStyle="bold"
-                />
-            <TextView
-                android:id="@+id/tv_harga"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="Harga Laptop"
-                android:textSize="17sp"
-                android:ellipsize="end"
-                android:maxLines="2"
-                />
-            <TextView
-                android:id="@+id/tv_link"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="Link foto"
-                android:textSize="17sp"
-                android:ellipsize="end"
-                android:visibility="gone"
-                />
-            <TextView
-                android:id="@+id/tv_spek"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="Spesifikasi"
-                android:textSize="17sp"
-                android:ellipsize="end"
-                android:maxLines="2"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_margin="6dp"
+                >
+                <TextView
+                    android:id="@+id/tv_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="ID Laptop"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    />
+                <TextView
+                    android:id="@+id/tv_nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Asus TUF 121243243544354546tiuyugyg5432432432"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/tv_harga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Harga Laptop"
+                    android:textSize="17sp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    />
+                <TextView
+                    android:id="@+id/tv_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Link foto"
+                    android:textSize="17sp"
+                    android:ellipsize="end"
+                    android:visibility="gone"
+                    />
+                <TextView
+                    android:id="@+id/tv_spek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Spesifikasi"
+                    android:textSize="17sp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:layout_weight="0.4"
+                android:id="@+id/iv_foto"
+                android:layout_width="200dp"
+                android:layout_height="170dp"
+                android:layout_marginEnd="6dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/a1asus_vivobook_pro_15x_oled_k6501"
                 />
         </LinearLayout>
-        <ImageView
-            android:layout_weight="0.4"
-            android:id="@+id/iv_foto"
-            android:layout_width="200dp"
-            android:layout_height="170dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/a1asus_vivobook_pro_15x_oled_k6501"
-            />
-    </LinearLayout>
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="6dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_hapus"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="12dp"
+                android:src="@drawable/ic_delete"
+                app:backgroundTint="#A459D1"
+                app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Small" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_ubah"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_edit"
+                app:backgroundTint="#F266AB"
+                app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Small" />
+        </LinearLayout>
+    </RelativeLayout>
+
 </androidx.cardview.widget.CardView>

@@ -26,23 +26,23 @@
         <activity
             android:name="com.ishaq.AsusIshaq2125250060.Activity.DetailActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:theme="@style/Theme.AppCompat.DayNight"
             android:parentActivityName="com.ishaq.AsusIshaq2125250060.Activity.MainActivity"/>
 
         <activity
             android:name="com.ishaq.AsusIshaq2125250060.Activity.TambahActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:theme="@style/Theme.AppCompat.DayNight"
             android:parentActivityName="com.ishaq.AsusIshaq2125250060.Activity.MainActivity" />
         <activity
             android:name="com.ishaq.AsusIshaq2125250060.Activity.UbahActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:theme="@style/Theme.AppCompat.DayNight"
             android:parentActivityName="com.ishaq.AsusIshaq2125250060.Activity.DetailActivity" />
         <activity
             android:name="com.ishaq.AsusIshaq2125250060.Activity.MainActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/Theme.AppCompat.DayNight">
         </activity>
     </application>
 

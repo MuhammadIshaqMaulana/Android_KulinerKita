@@ -30,11 +30,11 @@ public class UbahActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ubah);
 
         Intent ambil = getIntent();
-        zId = ambil.getStringExtra("yId");
-        zNama = ambil.getStringExtra("yNama");
-        zHarga = ambil.getStringExtra("yHarga");
-        zLink = ambil.getStringExtra("yLink");
-        zSpek = ambil.getStringExtra("ySpek");
+        zId = ambil.getStringExtra("xId");
+        zNama = ambil.getStringExtra("xNama");
+        zHarga = ambil.getStringExtra("xHarga");
+        zLink = ambil.getStringExtra("xLink");
+        zSpek = ambil.getStringExtra("xSpek");
 
         etNama = findViewById(R.id.et_nama);
         etHarga = findViewById(R.id.et_harga);

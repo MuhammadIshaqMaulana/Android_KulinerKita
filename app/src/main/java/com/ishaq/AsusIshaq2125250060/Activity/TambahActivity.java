@@ -28,8 +28,8 @@ public class TambahActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah);
         etNama = findViewById(R.id.et_nama);
-        etHarga = findViewById(R.id.et_link);
-        etLink = findViewById(R.id.et_harga);
+        etHarga = findViewById(R.id.et_harga);
+        etLink = findViewById(R.id.et_link);
         etSpek = findViewById(R.id.et_spek);
         btnSimpan = findViewById(R.id.btn_simpan);
 

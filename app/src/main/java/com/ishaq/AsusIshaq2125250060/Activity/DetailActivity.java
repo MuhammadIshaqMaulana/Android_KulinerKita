@@ -25,7 +25,7 @@ import retrofit2.Response;
 public class DetailActivity extends AppCompatActivity {
     private TextView tvNama, tvSpek, tvHarga;
     private String yId, yNama, yHarga, yLink, ySpek;
-    private FloatingActionButton fabHapus, fabUbah;
+//    private FloatingActionButton fabHapus, fabUbah;
     private ImageView ivFoto;
 
     @Override
@@ -43,8 +43,8 @@ public class DetailActivity extends AppCompatActivity {
         tvNama = findViewById(R.id.tv_nama);
         tvSpek = findViewById(R.id.tv_spek);
         tvHarga = findViewById(R.id.tv_harga);
-        fabHapus = findViewById(R.id.fab_hapus);
-        fabUbah = findViewById(R.id.fab_ubah);
+//        fabHapus = findViewById(R.id.fab_hapus);
+//        fabUbah = findViewById(R.id.fab_ubah);
         ivFoto = findViewById(R.id.iv_foto);
 
         tvNama.setText(yNama);
@@ -54,64 +54,63 @@ public class DetailActivity extends AppCompatActivity {
                 .load(yLink)
                 .into(ivFoto);
 
-        fabUbah.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent toUbah = new Intent(DetailActivity.this, UbahActivity.class);
-                toUbah.putExtra("yId", yId);
-                toUbah.putExtra("yNama", yNama);
-                toUbah.putExtra("yHarqa", yHarga);
-                toUbah.putExtra("yLink", yLink);
-                toUbah.putExtra("ySpek", ySpek);
-                DetailActivity.this.startActivity(toUbah);
-            }
-        });
+//        fabUbah.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent toUbah = new Intent(DetailActivity.this, UbahActivity.class);
+//                toUbah.putExtra("yId", yId);
+//                toUbah.putExtra("yNama", yNama);
+//                toUbah.putExtra("yHarqa", yHarga);
+//                toUbah.putExtra("yLink", yLink);
+//                toUbah.putExtra("ySpek", ySpek);
+//                DetailActivity.this.startActivity(toUbah);
+//            }
+//        });
 
-        fabHapus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder pesan = new AlertDialog.Builder(DetailActivity.this);
-                pesan.setTitle("Perhatian");
-                pesan.setMessage("Apakah kamu yakin ingin menghapus data?");
-                pesan.setCancelable(true);
-
-                pesan.setNegativeButton("Hapus", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        hapusAsus(yId);
-                        dialog.dismiss();
-                    }
-                });
-
-                pesan.setPositiveButton("Batal", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-                pesan.show();
-            }
-        });
-
+//            fabHapus.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    AlertDialog.Builder pesan = new AlertDialog.Builder(DetailActivity.this);
+//                    pesan.setTitle("Perhatian");
+//                    pesan.setMessage("Apakah kamu yakin ingin menghapus data?");
+//                    pesan.setCancelable(true);
+//
+//                    pesan.setNegativeButton("Hapus", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            hapusAsus(yId);
+//                            dialog.dismiss();
+//                        }
+//                    });
+//
+//                    pesan.setPositiveButton("Batal", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            dialog.dismiss();
+//                        }
+//                    });
+//                    pesan.show();
+//                }
+//            });
         }
-    private void hapusAsus(String idAsus){
-        APIRequestData ARD = RetroServer.KonekRetrofit().create(APIRequestData.class);
-        Call<ModelResponse> proses = ARD.ardDelete(idAsus);
-
-        proses.enqueue(new Callback<ModelResponse>() {
-            @Override
-            public void onResponse(Call<ModelResponse> call, Response<ModelResponse> response) {
-                String kode = response.body().getKode();
-                String pesan = response.body().getPesan();
-
-                Toast.makeText(DetailActivity.this, "Kode: " + kode + "Pesan: " + pesan, Toast.LENGTH_SHORT).show();
-                new MainActivity().retrieveAsus();
-            }
-
-            @Override
-            public void onFailure(Call<ModelResponse> call, Throwable t) {
-                Toast.makeText(DetailActivity.this, "Gagal Menghubungi Server", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//    private void hapusAsus(String idAsus){
+//        APIRequestData ARD = RetroServer.KonekRetrofit().create(APIRequestData.class);
+//        Call<ModelResponse> proses = ARD.ardDelete(idAsus);
+//
+//        proses.enqueue(new Callback<ModelResponse>() {
+//            @Override
+//            public void onResponse(Call<ModelResponse> call, Response<ModelResponse> response) {
+//                String kode = response.body().getKode();
+//                String pesan = response.body().getPesan();
+//
+//                Toast.makeText(DetailActivity.this, "Kode: " + kode + "Pesan: " + pesan, Toast.LENGTH_SHORT).show();
+//                new MainActivity().retrieveAsus();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ModelResponse> call, Throwable t) {
+//                Toast.makeText(DetailActivity.this, "Gagal Menghubungi Server", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 }

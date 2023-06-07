@@ -55,7 +55,7 @@
             android:textColorHint="@color/white"
             android:hint="Harga Laptop"
             android:background="@color/black"
-            android:inputType="number"
+            android:inputType="text"
 
             />
     </com.google.android.material.textfield.TextInputLayout>
