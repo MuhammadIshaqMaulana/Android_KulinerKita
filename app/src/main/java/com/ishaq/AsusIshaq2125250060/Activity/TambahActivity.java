@@ -27,6 +27,7 @@ public class TambahActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah);
+        getSupportActionBar().setTitle("TAMBAH ITEM");
         etNama = findViewById(R.id.et_nama);
         etHarga = findViewById(R.id.et_harga);
         etLink = findViewById(R.id.et_link);

@@ -28,6 +28,7 @@ public class UbahActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ubah);
+        getSupportActionBar().setTitle("UBAH ITEM");
 
         Intent ambil = getIntent();
         zId = ambil.getStringExtra("xId");

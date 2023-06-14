@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setTitle("ASUS SHOP");
 
         rvAsus = findViewById(R.id.rv_asus);
         fabTambah = findViewById(R.id.fab_tambah);
