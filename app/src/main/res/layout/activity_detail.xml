@@ -64,7 +64,11 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:textSize="27sp"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_tambah"
+                android:drawableRight="@drawable/ic_tambah"
                 android:layout_marginHorizontal="1dp"
                 android:backgroundTint="@color/purple_200"
 
